@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiBazar - Contacto</title>
+    <!-- Meta tags para vista previa al compartir el link por WhatsApp -->
+    <meta property="og:title" content="Vanidades Store - Juguetes, ropa, regalos y catálogos">
+    <meta property="og:description" content="Encuentra juguetes, regalos, ropa y catálogos de Natura, Avon, Esika, Seytu y Yanbal. Compra segura por Yape, Plin o efectivo.">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="Estilos/general.css">
+    <link rel="stylesheet" href="Estilos/contacto.css">   
+    </style>
+</head>
+
+<body>
+<!--Encabezado de la página -->  
+<header>
+    <img src="Imagenes/logo_cr_horizontal.png" alt="Logo Bazar" class="logo">
+    <h1>  Vanidades Store </h1>
+    <!--Menú de navegación-->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href= "productos.html">Productos</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="resenas.html">Reseñas</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+</header>
+
+    <main>        
+        <section>
+            <h2 class="seccion-titulo">Contáctanos</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Envíanos un mensaje</legend>
+
+                    <p>
+                        <label for="nombre">Nombre Completo:</label><br>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez">
+                    </p>
+
+                    <p>
+                        <label for="correo">Correo Electrónico:</label><br>
+                        <input type="email" id="correo" name="correo" required placeholder="tu@correo.com">
+                    </p>
+
+                    <p>
+                        <label for="asunto">Asunto:</label><br>
+                        <input type="text" id="asunto" name="asunto" placeholder="¿Sobre qué deseas consultarnos?">
+                    </p>
+
+                    <p>
+                        <label for="mensaje">Mensaje:</label><br>
+                        <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </p>
+
+                    <button type="submit">Enviar Mensaje</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <section>
+            <h2 class="seccion-titulo">Información de Atención</h2>
+            <address>
+                <p><strong>Ubicación:</strong> Av. Mercado Corporación, San Juan de Lurigancho, Lima </p>
+                <p><strong>Horario de atención:</strong> Lunes a Sábado de 12:00 pm a 6:00 pm</p>
+            </address>
+
+            <!-- Mapa de Google Maps embebido -->
+            <div class="mapa-wrapper">
+                <iframe
+                    src="https://www.google.com/maps?q=Mercado%20Corporaci%C3%B3n%2C%20San%20Juan%20de%20Lurigancho&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicación Vanidades Store">
+                </iframe>
+            </div>
+    
+            <h3 style="margin-top:20px;">Atención Directa</h3>
+            <p>¿Tienes dudas rápidas? Escríbenos directamente:</p>
+            <a href="https://wa.me/51999999999" target="_blank" class="btn-whatsapp">💬 Chatear por WhatsApp</a>
+        </section>
+    </main>
+
+<!--Pie de página -->  
+<footer>
+    <div class="footer-top">
+        <div class="footer-marca">
+            <img src="Imagenes/logo_cr_vanidades.png" alt="Logo Vanidades Store" class="footer-logo">
+            <div class="footer-marca-texto">
+                <h4>Vanidades Store</h4>
+                <p>Tu bazar de confianza en el mercado, hace más de 10 años.</p>
+            </div>
+        </div>
+
+        <div class="footer-enlaces">
+            <h4>Enlaces</h4>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="resenas.html">Reseñas</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+
+        <div class="footer-redes">
+            <h4>Síguenos</h4>
+            <div class="redes">
+                <a href="" target="_blank">
+                    <img src="Imagenes/icons8-instagram-48.png" alt="Instagram" class="icono-red">
+                </a>
+                <a href="" target="_blank" >
+                    <img src="Imagenes/facebook.png" alt="Facebook" class="icono-red">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Vanidades Store · Horario: Lun-Sáb 12:00 - 6:00 pm</p>
+        <a href="#top" class="footer-top-link">Volver arriba ↑</a>
+    </div>
+</footer>
+
+</body>
+</html>

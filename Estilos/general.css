@@ -1,0 +1,290 @@
+/* =========================================================
+   general.css — estilos compartidos por las 5 páginas
+   Aquí SOLO vive lo común: variables, header, nav, footer,
+   tarjetas, botones. Lo propio de cada página va en su CSS.
+   ========================================================= */
+
+:root {
+  --color-principal: #F81828;          /* rojo */
+  --color-principal-oscuro: #b3101c;   /* hover */
+  --color-acento: #E8C270;             /* dorado */
+  --color-secundario1: #F0568E;        /* rosa */
+  --color-secundario2: #f7c1bb;
+  --color-secundario3: #1e1e24;        /* oscuro */
+  --color-secundario4: #5dadc9;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-oscuro: #1eb956;
+  --color-fondo: #f8f9fa;
+  --color-tarjeta: #f2f3f5;            /* fondo de tarjetas internas */
+  --color-texto: #333;
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; }   /* ninguna imagen se sale de su caja */
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+/* ---------- HEADER Y NAV ---------- */
+header {
+  background-color: var(--color-principal);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-wrap: wrap;                  /* si no cabe, baja en vez de salirse */
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.logo { height: 80px; width: auto; }
+
+nav { display: flex; gap: 20px; }
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+nav a:hover { text-decoration: underline; }
+
+/* ---------- MAIN, SECTION, ASIDE ---------- */
+main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+section, aside {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 30px 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+section h2, aside h2, .seccion-titulo {
+  color: var(--color-principal);
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--color-principal);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* ---------- HERO (versión base con degradado; index lo cambia por imagen) ---------- */
+.hero-banner {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.hero-banner h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.hero-banner p  { font-size: 1.2rem; margin-bottom: 20px; }
+
+/* ---------- BOTONES ---------- */
+.btn {
+  display: inline-block;
+  background-color: white;
+  color: var(--color-principal);
+  padding: 10px 25px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-catalogo {
+  display: inline-block;
+  background-color: var(--color-principal);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+.btn-catalogo:hover { background-color: var(--color-principal-oscuro); }
+
+.btn-whatsapp {
+  display: inline-block;
+  background-color: var(--color-whatsapp);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.btn-whatsapp:hover { background-color: var(--color-whatsapp-oscuro); }
+
+/* Botón flotante de WhatsApp (se puede usar en las 5 páginas) */
+.whatsapp-flotante {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--color-whatsapp);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 100;
+  transition: transform 0.2s ease;
+}
+.whatsapp-flotante:hover { transform: scale(1.08); }
+.whatsapp-flotante img { width: 30px; height: 30px; }
+
+/* ---------- IMÁGENES ---------- */
+.img-destacado {                      /* tarjetas "destacados" del index */
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  background-color: #f4f4f4; 
+  border-radius: 6px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+img.logo-catalogo {
+  display: block;
+  height: auto;
+  max-height: 100px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto 10px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: linear-gradient(180deg, #3a3a42, #1e1e24);
+  color: white;
+  text-align: center;
+  padding: 30px 20px 0;
+  margin-top: 40px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 25px;
+  text-align: left;
+}
+
+.footer-marca { display: flex; align-items: center; gap: 15px; flex: 1 1 260px; }
+
+.footer-marca img.footer-logo {
+  height: 130px;
+  width: 130px;
+  object-fit: contain;
+}
+
+.footer-marca-texto h4 { margin-bottom: 5px; }
+.footer-marca-texto p  { font-size: 0.85rem; color: #ccc; }
+
+.footer-enlaces, .footer-redes { flex: 1 1 150px; }
+
+.footer-enlaces h4, .footer-redes h4 {
+  color: var(--color-secundario1);
+  margin-bottom: 12px;
+}
+
+.footer-enlaces a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+.footer-enlaces a:hover { text-decoration: underline; }
+
+.redes { display: flex; justify-content: center; gap: 15px; }
+.footer-redes .redes { justify-content: flex-start; }
+
+.icono-red {
+  width: 34px;
+  height: 34px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 6px;
+  transition: transform 0.2s ease;
+}
+.icono-red:hover { transform: scale(1.15); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px 20px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  font-size: 0.85rem;
+}
+
+.footer-top-link { color: white; text-decoration: none; }
+.footer-top-link:hover { text-decoration: underline; }
+
+/* =========================================================
+   RESPONSIVE — siempre al FINAL del archivo, para que gane
+   sobre las reglas normales de arriba
+   ========================================================= */
+h2 { font-size: clamp(1.25rem, 5vw, 1.6rem); }
+h3 { font-size: clamp(1rem, 4vw, 1.15rem); }
+
+@media (max-width: 768px) {
+  header { justify-content: flex-start; padding: 0.8rem 1rem; }
+  .logo { height: 60px; }
+  header h1 { font-size: 1.1rem; }
+  nav { width: 100%; justify-content: center; flex-wrap: wrap; gap: 8px 16px; }
+
+  main { padding: 12px; }
+  section, aside { padding: 20px 14px; margin-bottom: 25px; }
+  .hero-banner h1 { font-size: 1.8rem; }
+
+  .footer-top { flex-direction: column; align-items: center; text-align: center; }
+  .footer-marca, .footer-enlaces, .footer-redes { flex: none; }  /* en columna, el flex-basis sería ALTO */
+  .footer-marca { flex-direction: column; text-align: center; }
+  .footer-marca img.footer-logo { height: 100px; width: 100px; }
+  .footer-redes .redes { justify-content: center; }
+  .footer-bottom { justify-content: center; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .hero-banner { padding: 40px 16px; }
+  .hero-banner h1 { font-size: 1.5rem; }
+  .whatsapp-flotante { width: 48px; height: 48px; bottom: 16px; right: 16px; }
+}

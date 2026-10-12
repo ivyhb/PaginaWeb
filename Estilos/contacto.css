@@ -1,0 +1,62 @@
+/* contacto.css — SOLO lo propio de contacto.html */
+
+fieldset {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: var(--color-tarjeta);
+}
+fieldset p { margin-bottom: 14px; }
+
+legend {
+  font-weight: bold;
+  background: var(--color-secundario1);
+  color: white;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+label { font-weight: 600; font-size: 0.9rem; }
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  background: white;
+}
+input:focus, textarea:focus { outline: none; border-color: var(--color-principal); }
+
+button[type="submit"] {
+  background-color: var(--color-principal);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+button[type="submit"]:hover { background-color: var(--color-principal-oscuro); }
+
+address {
+  font-style: normal;
+  background: var(--color-tarjeta);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+address p { margin-bottom: 6px; }
+
+.mapa-wrapper { border-radius: 8px; overflow: hidden; margin-top: 15px; }
+.mapa-wrapper iframe { width: 100%; height: 300px; border: 0; display: block; }
+
+@media (max-width: 480px) { .mapa-wrapper iframe { height: 240px; } }

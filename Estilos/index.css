@@ -1,0 +1,86 @@
+/* index.css — SOLO lo propio de index.html */
+
+/* Hero con imagen: general.css ya da padding, color, radio y centrado */
+.hero-banner {
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("../Imagenes/bannerhero.jfif");   /* cambia a .jpg cuando la conviertan */
+  background-size: cover;
+  background-position: center;
+}
+
+.seccion-confianza {
+  background-color: var(--color-tarjeta);
+  border-left: 4px solid var(--color-principal);
+  padding: 15px 20px;
+  border-radius: 6px;
+  margin-bottom: 25px;
+}
+.seccion-confianza p { font-size: 0.95rem; line-height: 1.5; }
+
+/* Destacados */
+.grid-destacados { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+
+.grid-destacados article {
+  flex: 1 1 250px;
+  max-width: 300px;
+  background: var(--color-tarjeta);
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+.grid-destacados article:hover { transform: translateY(-3px); }
+
+.grid-destacados h3 { font-size: 1rem; margin-bottom: 5px; }
+.grid-destacados .desc { font-size: 0.85rem; color: #666; margin-bottom: 10px; }
+.grid-destacados .precio { font-size: 1rem; font-weight: bold; color: var(--color-principal); margin-bottom: 12px; }
+
+.btn-consultar {
+  display: inline-block;
+  background-color: var(--color-whatsapp);
+  color: white;
+  text-align: center;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+}
+.btn-consultar:hover { background-color: var(--color-whatsapp-oscuro); }
+
+/* Mini reseñas, nosotros y contacto (ya son tarjetas blancas por section/aside) */
+.seccion-resenas,
+.seccion-nosotros-mini,
+.seccion-contacto-mini { text-align: center; }
+
+.subtitulo-resenas,
+.seccion-nosotros-mini p,
+.seccion-contacto-mini p { color: #555; margin-bottom: 15px; }
+
+.mini-resenas { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 20px; }
+
+.mini-review {
+  background-color: var(--color-tarjeta);
+  border-radius: 8px;
+  padding: 18px;
+  flex: 1 1 280px;
+  max-width: 320px;
+  text-align: left;
+}
+.mini-review .stars { color: #f5b301; font-size: 1.1rem; margin-bottom: 8px; }
+.mini-review p { font-size: 0.9rem; color: #444; line-height: 1.4; }
+
+.seccion-contacto-mini .btn-whatsapp { margin: 0 10px 10px 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .hero-banner { min-height: 340px; } }
+@media (max-width: 480px) { .hero-banner { min-height: 280px; } }

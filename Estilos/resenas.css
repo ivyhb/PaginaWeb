@@ -1,0 +1,32 @@
+/* resenas.css — SOLO lo propio de resenas.html*/
+
+/* Título centrado, sin subrayado (esta página no usa section) */
+main > .seccion-titulo {
+  display: block;
+  text-align: center;
+  border-bottom: none;
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+}
+
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 20px;
+}
+
+.review-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.review-card h3 { font-size: 1.2rem; }
+.review-card p  { font-size: 0.95rem; line-height: 1.5; color: #444; }
+
+.stars { color: #f5b301; font-size: 1.2rem; letter-spacing: 2px; }
+.stars .gray-star { color: #ccc; }

@@ -1,0 +1,185 @@
+/* productos.css — SOLO lo propio de productos.html */
+
+/* ---------- BANNER ---------- */
+.banner-productos {
+  position: relative;
+  text-align: left;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../Imagenes/bannerProd.jpg");
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.banner-productos h2 {
+  color: var(--color-secundario1);
+  border-bottom: none;
+  padding-bottom: 0;
+  font-size: 1.8rem;
+}
+
+.banner-productos p { color: white; margin-top: 5px; }
+
+.divisor-seccion { margin: 20px 0; }
+
+main > h2 { color: var(--color-principal); margin-bottom: 15px; }
+
+/* ---------- SUBMENÚ DE CATEGORÍAS ---------- */
+.submenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: var(--color-secundario1);
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.submenu-categorias { display: flex; flex-wrap: wrap; gap: 15px; }
+
+.submenu a {
+  background-color: white;
+  color: var(--color-secundario1);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.submenu a:hover {
+  text-decoration: none;
+  background-color: var(--color-secundario1);
+  color: white;
+}
+
+.submenu a.activo { background-color: var(--color-secundario3); color: white; }
+
+.btn-ofertas { background-color: var(--color-principal) !important; color: white !important; }
+.btn-ofertas:hover { background-color: var(--color-principal-oscuro) !important; }
+.btn-ofertas.activo { background-color: var(--color-secundario3) !important; }
+
+/* ---------- GRID DE PRODUCTOS ---------- */
+.fila { display: flex; flex-wrap: wrap; gap: 15px; }
+
+.producto {
+  flex: 1 1 250px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.producto:hover { transform: translateY(-3px); }
+
+#catalogos .producto { flex: 1 1 180px; min-width: 0; }
+
+.producto h3 { margin-top: 10px; font-size: 1rem; }
+.producto p  { font-size: 0.85rem; color: #666; margin-top: 5px; }
+
+/* Precio: <p class="precio">S/ 25.00</p> */
+.producto .precio {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-principal);
+  margin-top: 6px;
+}
+
+/* Imagen + botón de WhatsApp que aparece al pasar el mouse */
+.img-wrapper { position: relative; border-radius: 8px; overflow: hidden; }
+
+.img-wrapper img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  background-color: #f4f4f4;
+}
+
+.overlay-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.img-wrapper:hover .overlay-hover { opacity: 1; }
+
+.btn-whatsapp-mini {
+  background-color: var(--color-whatsapp);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+.etiqueta {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  z-index: 2;
+}
+.etiqueta-nuevo  { background-color: var(--color-secundario4); }
+.etiqueta-oferta { background-color: var(--color-principal); }
+
+#catalogos .producto a { display: block; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .banner-productos { min-height: 220px; }
+  .banner-productos h2 { font-size: 1.5rem; }
+  main > h2 { margin-top: 10px; }
+  .submenu { padding: 10px; gap: 6px; justify-content: center; }
+  .submenu-categorias { display: contents; }   /* Ofertas se junta con las demás */
+  .submenu a { padding: 6px 12px; font-size: 0.8rem; }
+}
+
+/* En celular: 2 productos por fila */
+@media (max-width: 600px) {
+  .producto,
+  #catalogos .producto { flex: 1 1 140px; }
+  .img-wrapper img { height: 140px; }
+}
+
+/* Pantallas táctiles: no existe hover, el botón se muestra siempre */
+@media (hover: none) {
+  .whatsapp-flotante { display: none; }
+  .overlay-hover {
+    opacity: 1;
+    background: transparent;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 8px;
+    pointer-events: none;
+  }
+
+  .btn-whatsapp-mini {
+    pointer-events: auto;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    font-size: 0;
+    border-radius: 50%;
+    background: var(--color-whatsapp) url("../Imagenes/icons8-whatsapp-48.png") center / 22px no-repeat;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+}
